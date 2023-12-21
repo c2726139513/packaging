@@ -21,10 +21,10 @@ jobs:
         package_target:
           - bookworm-amd64
           - bookworm-arm64
+          - bookworm-armhf
           - bullseye-amd64
           - bullseye-arm64
-          - raspberrypi.bookworm-armhf
-          - raspberrypi.bullseye-armhf
+          - bullseye-armhf
       fail-fast: false
     steps:
       - name: configure docker
