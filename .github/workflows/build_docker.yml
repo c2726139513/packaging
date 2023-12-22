@@ -1,0 +1,21 @@
+name: Build Docker
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
+    - name: build
+      run: |
+        cd $GITHUB_WORKSPACE
+        docker run --privileged --rm tonistiigi/binfmt --install all
+        docker buildx create --name mybuilder --bootstrap --use
+        docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t docker.spjsjg.v6.navy:8082/erpnext:latest --push .
