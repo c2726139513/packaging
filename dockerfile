@@ -117,6 +117,7 @@ RUN bench init \
   --verbose \
   /home/frappe/frappe-bench && \
   cd /home/frappe/frappe-bench && \
+  npm config set registry https://registry.npmmirror.com && \
   bench get-app --branch=${ERPNEXT_BRANCH} --resolve-deps erpnext ${ERPNEXT_REPO} && \
   bench get-app https://gitee.com/yuzelin/erpnext_chinese.git && \
   bench get-app --branch=${ERPNEXT_BRANCH} https://gitee.com/yuzelin/erpnext_oob.git && \
