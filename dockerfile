@@ -94,7 +94,7 @@ RUN apt-get update \
     build-essential \
     libbz2-dev \
     # For build cryptography in armhf but has error, so use the prebuilt wheels from piwheels.org
-    # libxslt-dev libxml2-dev libssl-dev python3-dev cargo\
+    libxslt-dev libxml2-dev libssl-dev python3-dev cargo\
     # For canvas in arm64 and armhf
     && if [ `dpkg --print-architecture` != "amd64" ]; then apt-get install --no-install-recommends -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev; fi \
     && rm -rf /var/lib/apt/lists/* \
