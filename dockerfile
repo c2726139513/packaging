@@ -125,6 +125,7 @@ RUN bench init \
   bench get-app --branch=${ERPNEXT_BRANCH} hrms && \
   bench get-app print_designer && \
   bench get-app https://github.com/c2726139513/my_erpnext && \
+  bench get-app https://gitee.com/yuzelin/zelin_ac && \
   echo "{}" > sites/common_site_config.json && \
   find apps -mindepth 1 -path "*/.git" | xargs rm -fr
 
