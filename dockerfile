@@ -117,13 +117,12 @@ RUN bench init \
   --verbose \
   /home/frappe/frappe-bench && \
   cd /home/frappe/frappe-bench && \
-  npm config set registry https://registry.npmmirror.com && \
   bench get-app --branch=${ERPNEXT_BRANCH} --resolve-deps erpnext ${ERPNEXT_REPO} && \
   bench get-app https://gitee.com/yuzelin/erpnext_chinese.git && \
   bench get-app --branch=${ERPNEXT_BRANCH} https://gitee.com/yuzelin/erpnext_oob.git && \
   bench get-app payments && \
   bench set-config -gp socketio_port 9000 && \
-  bench get-app --branch=${ERPNEXT_BRANCH} hrms && \
+  bench get-app --branch=v15.4.0 hrms && \
   bench get-app print_designer && \
   bench get-app https://github.com/c2726139513/my_erpnext && \
   bench get-app https://gitee.com/yuzelin/zelin_ac && \
